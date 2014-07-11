@@ -35,6 +35,18 @@ end
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+
+	gem 'rspec-rails'
+	gem "factory_girl_rails"
+	gem "capybara"
+	gem 'fakeweb'
+
+	gem 'guard'
+	gem "guard-rspec"
+
+	gem 'rb-fsevent'
 end
 group :production do
 	gem "rails_12factor"
