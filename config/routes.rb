@@ -21,7 +21,7 @@ Contestapp::Application.routes.draw do
   end
 
   root 'dashboard#index'
-
+  post "create_contest" => 'dashboard#create_contest'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
