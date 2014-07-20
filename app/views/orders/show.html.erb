@@ -22,6 +22,29 @@
   <dd><%= @order.financial_status %></dd>
 </dl>
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:number) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:first_name) %></th>
+      <th><%= model_class.human_attribute_name(:last_name) %></th>
+
+      <th><%= model_class.human_attribute_name(:order_date) %></th>
+      <th><%= model_class.human_attribute_name(:total) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_items.each do |order_item| %>
+      <tr>
+        <td><%= link_to order_item.id, '#' %></td>
+        <td><%= order_item.unit_price%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               orders_path, :class => 'btn'  %>
