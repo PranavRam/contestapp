@@ -4,7 +4,7 @@ class Contest < ActiveRecord::Base
 
 	def criteria
 		results = []
-		results << "Product Name: #{product_name}" if product_name.present?
+		results << "Product Name: #{name}" if name.present?
 		results << "Start Date: #{I18n.l start_date.to_date, format: :short}" if start_date.present?
 		results << "End Date: #{I18n.l end_date.to_date,
            format: :short}" if end_date.present?
